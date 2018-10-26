@@ -1,23 +1,24 @@
-AFTER STEP 1 DO THE FOLLOWING UNTIL I GET A CHANCE TO MAKE THIS A CONFIG (also, yes I know my key is in there) 
-edit data/www/scripts/setup.sh lines 56-59 with your info
-also go into pantheon and genearte your machine token and replace mine on line 106
+INTRO
 
+This is a generic project setup for Drupal 8 using rsync to improve docker file I/O performance. 
 
+TODO: make a config file to replace all ccurrences of 'websitename'
+
+SETUP
 0. Install Docker (https://blog.jayway.com/2017/04/19/running-docker-on-bash-on-windows/)
 
-1. git clone git@github.com:nicklz/fhresearch_docker.git
-2. cd fhresearch_docker
-3. cp ~/.ssh/id_rsa data/www/id_rsa (make sure your public key is in github and pantheon as well)
+1. git clone git@github.com:nicklz/drupal_docker.git
+2. cd drupal_docker
+3. cp ~/.ssh/id_rsa data/www/id_rsa (place a copy of the database called 'dump.sql' in data/www/dump.sql as well)
 4. docker-compose up -d
-5. docker exec -it fhresearch_web bash
-6. ./scripts/setup.sh (macs might need to chmod 777 these scripts so they can execute)
+5. docker exec -it websitename_web bash
+6. ./scripts/setup.sh 
+7. Visit http://local.websitename.edu:20003
 
+COMMANDS (within websitename_web)
 
-7. Visit http://local.areospace.edu:10531
+./scripts/sync.sh = sync database
 
+./scripts/restart.sh = run this any time after restarting 
 
-port ****3 is without varnish
-port ****6 is phpmyadmin
-
-DRUPAL 8
-ACQUIA
+Visit http://local.websitename.edu:20006 for phpmyadmin (root with no password)
