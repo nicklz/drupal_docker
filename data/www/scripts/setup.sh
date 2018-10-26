@@ -48,7 +48,7 @@ mkdir /var/www/project
 
 
 rm -rf /tmp/websitename
-cd /tmp && git clone git@github.com:nicklz/websitename.git websitename && cd websitename && composer install
+cd /tmp && git clone git@github.com:nicklz/websitename.git websitename && cd websitename
 mv /tmp/websitename /var/www/project/websitename
 
 
