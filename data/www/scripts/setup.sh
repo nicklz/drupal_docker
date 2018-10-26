@@ -48,12 +48,9 @@ mkdir /var/www/project
 
 
 rm -rf /tmp/websitename
-cd /tmp && git clone git@bitbucket.org:staufferinc/usc-rec.git websitename && cd websitename && composer install
+cd /tmp && git clone git@github.com:nicklz/websitename.git websitename && cd websitename && composer install
 mv /tmp/websitename /var/www/project/websitename
 
-cd /var/www/project/ && git config --global user.email "nkuhn@websitename.com"
-cd /var/www/project/ && git config --global user.name "Nick Kuhn"
-cd /var/www/project/ && git config --global core.editor "vim"
 
 
 
